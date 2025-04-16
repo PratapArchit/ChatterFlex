@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#000000">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:indeterminateTint="@android:color/white" />
+
+    <!-- Top-left: ChatterFlex -->
+    <TextView
+        android:id="@+id/tvChatterFlex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ChatterFlex"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:fontFamily="@font/exo2"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="48dp"
+        android:layout_gravity="start"/>
+
+    <!-- Center heading: Select, Device! -->
+    <TextView
+        android:id="@+id/tvDevice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select, Device!"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:fontFamily="@font/lato"
+        android:layout_marginBottom="48dp"
+        android:layout_gravity="center"/>
+
+
+    <!-- List of WiFi/Device names -->
+    <ListView
+        android:id="@+id/wifiListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
+
+    <!-- Connect Button -->
+    <Button
+        android:id="@+id/connectButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Connect"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#3E92FF"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

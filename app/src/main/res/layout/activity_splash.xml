@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <LinearLayout
+        android:id="@+id/textContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/chatterText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chatter"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/exo2"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/flexText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flex"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/exo2"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</RelativeLayout>

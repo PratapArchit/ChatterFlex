@@ -1,0 +1,169 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="16dp">
+
+    <!-- Top bar with ChatterFlex and WiFi info -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp">
+
+        <!-- ChatterFlex Logo -->
+        <TextView
+            android:id="@+id/tvChatterFlex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ChatterFlex"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:fontFamily="@font/exo2"
+            android:layout_alignParentStart="true" />
+
+        <!-- WiFi Icon and SSID container -->
+        <LinearLayout
+            android:id="@+id/wifiInfoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/wifiIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="6dp"
+                android:src="@drawable/ic_wifi"
+                app:tint="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/ssidText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SSID"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:fontFamily="@font/lato" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <!-- Greeting -->
+    <TextView
+        android:id="@+id/tvGreeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hi there, User!"
+        android:textSize="36sp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/lato"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvChatterFlex"
+        android:layout_marginTop="90dp" />
+
+    <!-- Button container -->
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvGreeting"
+        android:layout_above="@id/bottomBar"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="2">
+
+        <!-- Start Speech Button -->
+        <LinearLayout
+            android:id="@+id/btnSpeech"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_button"
+            android:layout_marginEnd="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/ic_speaker"
+                app:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start\nListening"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:fontFamily="@font/lato" />
+        </LinearLayout>
+
+        <!-- Start Listening Button -->
+        <LinearLayout
+            android:id="@+id/btnListen"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_button"
+            android:layout_marginStart="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/ic_mic"
+                app:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start\nSpeaking"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:fontFamily="@font/lato" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="#111111"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/backbtn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_menu"
+            app:tint="#FFFFFF" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/chatBotIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_chat"
+            android:contentDescription="ChatBot"
+            app:tint="#FFFFFF" />
+    </LinearLayout>
+</RelativeLayout>
