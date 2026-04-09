@@ -9,7 +9,51 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-let latestMessage = "Hello from Chatterflex";
+let lastProcessedMessage = "";
+let cachedResponse = "Waiting for input...";
+
+app.get("/getmessage", async (req, res) => {
+  try {
+    // If same message → return cached result (NO Gemini call)
+    if (latestMessage === lastProcessedMessage) {
+      return res.json({ message: cachedResponse });
+    }
+
+    // New message → call Gemini
+    lastProcessedMessage = latestMessage;
+
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [
+            {
+              parts: [
+                { text: `User: ${latestMessage}` }
+              ]
+            }
+          ]
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    const text =
+      data.candidates?.[0]?.content?.parts?.[0]?.text ||
+      "No response";
+
+    // Save result
+    cachedResponse = text;
+
+    res.json({ message: text });
+
+  } catch (err) {
+    res.json({ message: "Error: " + err.message });
+  }
+});
 
 // ESP32 sends gesture
 app.post("/send", (req, res) => {

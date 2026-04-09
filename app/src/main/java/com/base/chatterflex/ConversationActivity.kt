@@ -92,7 +92,7 @@ class ConversationActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 if (!isSpeakingOrListening) {
                     fetchFromApi()
                 }
-                handler.postDelayed(this, 7000)
+                handler.postDelayed(this, 20000)
             }
         }, 0)
     }
