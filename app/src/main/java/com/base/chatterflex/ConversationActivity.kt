@@ -33,7 +33,7 @@ class ConversationActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
 
     private val REQUEST_SPEECH_INPUT = 200
-    private val apiUrl = "https://chatterflex.onrender.com/getmessage"
+    private val apiUrl = "https://chatterflex-k55i.onrender.com/getmessage"
 
     private var lastBotMessage: String? = null
     private val handler = Handler(Looper.getMainLooper())
