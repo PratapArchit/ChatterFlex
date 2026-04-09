@@ -29,7 +29,7 @@ class ChatBotActivity : AppCompatActivity() {
     private lateinit var tvChatterFlex: TextView
     private val client = OkHttpClient()
 
-    private val GEMINI_API_KEY = "AIzaSyBL4aiEHR2mBeelotnAujMH8MlMCSYxUo0"
+    private val GEMINI_API_KEY = "AIzaSyCBbd32Ecx-WPBjwFOUR1hx_UdJC5iI4Gs"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
